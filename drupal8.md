@@ -57,7 +57,7 @@ Etter dette så kan dev.utdanning.no brukes uten at man behøver å tenkte på a
 - Bruk db-oppsett fra dbpwfile.txt
 
 
-## Legge inn database og filer
+## Legge inn database og filer (gammel måte)
 
 Kort sagt: Dump database fra beta og last ned. Installer med `./robo.phar dbrestore`. Kopier fil-katalogen.
 Hvis du har installert Drupal 8 for utdanning.no tidligere, men ikke lasted ned filene så bør du også oppdatere databasen.
@@ -71,6 +71,12 @@ Hvis du har installert Drupal 8 for utdanning.no tidligere, men ikke lasted ned 
 - Lokalt: `cd source/utdanning.no/web/sites/default`
 - Lokalt: `mv files filesold` (så du har de gamle filene i tilfelle noe skjærer seg)
 - Lokalt: `tar -xzvf /srv/tmp/beta.d8.files.tar.gz` (juster sti til fildump hvis nødvendig)
+
+## Legge inn database og filer (ny måte)
+
+- På prod: Gå inn i `/srv/tmp/backup-command` og kjør `php bkp.php` . Følg instrukejonene for å ta en db-dump for alle 4 databasene: utdanning.no (drupal), datakollektivet, data.utdanning.no og min.utdanning.no
+- Lokalt: Last ned filene fra prod og legg den i prosjektkatalogen, altså på samme sted som robo.phar.
+- TO BE CONTINUED
 
 
 ## Theme-utvikling
