@@ -20,7 +20,7 @@ title: Oppsett av Drupal 8
 - Meld deg inn i docker-gruppa. Etter dette har det vist seg nødvendig å restarte pc-en.
 - For Mac: Installer Docker Desktop
 - For Mac: Kildekoden må være sjekket ut i en mappe som ligger inne i 'File sharing'-innstillingene til Docker. Hvis ikke så får ikke Mac mountet filsystemet inne i Docker.
-- `./robo.phar install`
+- `./robo.phar install:utd`
 - NB! Hvis du har Apache eller noe annet kjørende på port 80 så vil robo-installasjonen feile. Stopp Apache eller endre varnish.ports i docker-compose.yml til f.eks. 81:80.
 
 
