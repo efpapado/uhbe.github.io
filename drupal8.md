@@ -27,16 +27,16 @@ title: Oppsett av Drupal 8
 
 Det avhenger også av eksisterende oppsett og portkonfigurasjon. Docker vil i utgangspunktet ta port 80 så det kræsjer fort med eksisterende oppsett.
 
-- Legg inn dev8.utdanning.no i /etc/hosts
+- Legg inn dev.utdanning.no i /etc/hosts
 
 ## Alternativt Apache-oppsett
 
 For å unngå kollisjon med eventuelle andre ting på port 80 så kan man endre varnish.ports i docker-compose.yml til 81:80 og bruke det følgende i en vhost-fil til Apache:
 <pre>
 <VirtualHost *:80>
-    ServerName dev8.utdanning.no
-    ProxyPass "/"  "http://dev8.utdanning.no:81/"
-    ProxyPassReverse "/"  "http://dev8.utdanning.no:81/"
+    ServerName dev.utdanning.no
+    ProxyPass "/"  "http://dev.utdanning.no:81/"
+    ProxyPassReverse "/"  "http://dev.utdanning.no:81/"
 </VirtualHost>
 </pre>
 
@@ -46,13 +46,13 @@ For at dette skal fungere så må proxy og proxy_http-modulene aktiveres:
 
 Aktiver deretter vhost-en. (`sudo a2ensite ....`)
 
-Etter dette så kan dev8.utdanning.no brukes uten at man behøver å tenkte på at den egentlig kjøres på port 81. Men der Drupal bruker absolutte lenker så kan :81 dukke opp.
+Etter dette så kan dev.utdanning.no brukes uten at man behøver å tenkte på at den egentlig kjøres på port 81. Men der Drupal bruker absolutte lenker så kan :81 dukke opp.
 
 
 
 ## Drupal 8
 
-Åpne dev8.utdanning.no i en nettleser og følg instruksjonene.
+Åpne dev.utdanning.no i en nettleser og følg instruksjonene.
 
 - Bruk db-oppsett fra dbpwfile.txt
 
@@ -79,7 +79,7 @@ Hvis du har installert Drupal 8 for utdanning.no tidligere, men ikke lasted ned 
 - `npm install`
 - `npx gulp`
 
-Du kan nå se nettstedet på localhost:3000 (autoppdaterer ved css- og js-endringer) eller dev8.utdanning.no. Det er lurt å være innlogget for da er du mindre utsatt for Drupal-cache.
+Du kan nå se nettstedet på localhost:3000 (autoppdaterer ved css- og js-endringer) eller dev.utdanning.no. Det er lurt å være innlogget for da er du mindre utsatt for Drupal-cache.
 
 
 ## Twig
